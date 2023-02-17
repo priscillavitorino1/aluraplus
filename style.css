@@ -1,0 +1,197 @@
+:root {
+/* :root para declarar variaveis no css */
+
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --botao-azul: #167BF7;
+    --cor-de-fundo: #00030C;
+    --fonte-principal: 'Inter';
+    --botao-azul-efeito: #79b2f8;
+}
+
+* { 
+/* o asterisco pega todos os elementos HTML, ele seleciona todos eles e coloca um estilo que determinarmos ali. 
+Ele não vai tão a fundo quanto o root. Então ele pega só os elementos, ele não define todo o arquivo CSS como o root. */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.principal {
+    background-image: url(img/Background.png);
+    /* iewport height que seria a altura da tela do dispositivo. 
+    Ele vai detectar por causa daquele metadados que vimos no index.html qual é a altura dessa página 
+    e ele vai usar 100% por causa do 100vh. */
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-items: center;
+    /* align-items: Isso aconteceu porque o align items, em português significa alinhar item, quando ele está no grid e que só definimos coluna, 
+    não definimos linha, ele vai alinhar ao centro dessa coluna. */
+    /* O código começa com um elemento de bloco (a div), ou seja, que tem display block, e há elementos dentro dele que são inline. 
+    Dessa maneira, usar a propriedade text-align na div permitirá alinhar para qualquer lado que você desejar os elementos filhos da div. */
+    text-align: center;
+    /* text-align: Ele funciona alinhando ao centro tudo o que está dentro de um elemento de bloco. 
+    Ou seja, aquela section que criamos para a primeira seção, por padrão ele veio com o display: block. 
+    Então esse text align alinhou tudo o que tem ali dentro, inclusive, a imagem. */
+}
+
+.container {
+    /* Criei essa classe nova porque ela vai ser utilizada em todas as seções dessa página.
+    e uma pagina so com diversas quebras */
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container__botao {
+    background-color: var(--botao-azul);
+    border-radius: 5px;
+    padding: 1em;
+    /* Essa medida "em" é o tamanho do fundo. Ela é uma medida relativa e é o tamanho da fonte. 
+    Se coloquei que o tamanho da fonte é 16, o padding vai ser tamanho 16.  */
+    display: block;
+    color: var(--branco-principal);
+    text-decoration: none;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.botao_secundario {
+    background-color: transparent;
+    border: 2px solid var(--branco-principal);
+}
+
+.container__titulo {
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.container__aviso {
+    font-size: 12px;
+    color: var(--cinza-secundario);
+}
+
+.container__imagem {
+    margin: 1em 0 2em 0;
+}
+
+.container__caixa {
+    margin: 0 6em;
+}
+
+.secundario__imagem {
+    width: 80%;
+}
+
+.secundario {
+    margin: 0 10em;
+    align-items: center;
+}
+
+.descricao__titulo {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 0.1em;
+    color: var(--branco-principal);
+}
+
+.descricao__texto {
+    color: var(--cinza-secundario);
+}
+
+.botao_container {
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.container__descricao {
+    padding: 2em;
+}
+
+.dispositivos__lista {
+    display: flex;
+    justify-content: center;
+    margin: 5em 0;
+}
+
+.dispositivos {
+    text-align: center;
+}
+
+.dispositivos__titulo {
+    font-size: 48px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--branco-principal);
+}
+
+.lista__item {
+    font-size: 32px;
+    color: var(--branco-principal);
+    font-weight: 700;
+}
+
+.rodape {
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    text-align: center;
+}
+
+.rodape__lista{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em ;
+}
+
+.lista__link {
+    padding-left: 1em;
+}
+
+.lista__link a {
+    text-decoration: none;
+    color: var(--branco-principal);
+    cursor: pointer;
+}
+
+.rodape__texto {
+    font-size: 14px;
+    color: var(--cinza-secundario);
+    text-align: center;
+    margin: 2em 0;
+    padding: 0 10em;
+}
+
+.lista__link a:hover {
+    color: var(--botao-azul);
+}
+
+.lista__link a:active {
+    color: purple;
+}
+
+.container__botao:hover {
+    background-color: var(--botao-azul-efeito);
+    color: var(--cor-de-fundo);
+}
+
+/* Uma pseudo-classe CSS é uma propriedade que é adicionada ao final dos seletores que especifica o estado que esse elemento está. 
+Ele detecta, por exemplo, se o elemento está com um mouse em cima dele, construindo uma experiência interativa com o usuário. 
+Aqui, você pode conferir uma lista de pseudo-classes para testar no seu projeto:
+
+:focus: é aplicada quando um elemento está em foco, pode ser pelo clique do mouse ou seleção pelo teclado. 
+Um exemplo é quando os campos de escrita em formulários estão selecionados para o usuário escrever.
+
+:hover: detecta quando um usuário está com o mouse em cima do elemento, sem necessariamente estar clicando.
+
+:active: detecta quando o elemento está ativo, quando há uma interação, por exemplo: o link <a> está sendo clicado.
+
+:visited: detecta quando o link <a> já foi visitado, ou seja, se você já clicou anteriormente naquele link.
+
+:link: detecta quando é um link <a> que nunca foi clicado antes. */
